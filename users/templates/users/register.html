@@ -1,0 +1,24 @@
+
+{% block content %}
+<body style="background-color: rgb(241, 244, 245)">
+
+	<div class="content-section" style="margin-left: 130px; background-color: rgb(101, 98, 98); color: white;">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend>CMS-REGISTRATION</legend>
+				<p>*NOTE Username is your Id Number</p>
+				{{ form.as_p }}
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-outline-info" type="submit">Sign up</button>
+			</div>
+		</form>
+		<div class="border-top pt-3">
+			<small class="text-muted">
+			Already have an account? <a class="ml-2" href="{% url 'service-home' %}" style="color: white;">Sign in</a>
+		</small>
+		</div>
+	</div>
+	</body>
+{% endblock content %}
